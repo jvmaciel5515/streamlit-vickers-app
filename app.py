@@ -43,7 +43,7 @@ for area in areas.keys():
         if media != 0:  # Verificar se a média é diferente de zero
             HV = 1.8544 * valor_parametro / (media / 2000) ** 2
             areas[area]["hvs"].append(HV)
-            st.write(f"O resultado para a medição {i + 1} na área {area} é HV = {HV:.2f} com profundidade = {profundidade:.2f} mm")
+            st.write(f"O resultado para a medição {i + 1} na área {area} é HV = {HV:.2f} com profundidade = {profundidade:.2f} um")
         else:
             st.error("A média deve ser diferente de zero para calcular HV.")
 
@@ -63,7 +63,7 @@ for area in areas.values():
 if len(profundidades) == len(valores_hv) and len(valores_hv) > 0:  # Verificar se as listas têm o mesmo tamanho
     plt.figure(figsize=(10, 6))
     plt.plot(profundidades, valores_hv, marker='o', linestyle='-', color='b', alpha=0.7)  # Gráfico de linha
-    plt.xlabel("Profundidade (mm)")
+    plt.xlabel("Profundidade (um)")
     plt.ylabel("Média Dureza Vickers (HV)")
     plt.title("Média Dureza Vickers em relação à Profundidade")
     plt.grid()
